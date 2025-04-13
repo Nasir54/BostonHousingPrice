@@ -20,7 +20,7 @@ def predict_api():
   output = regmodel.predict(new_data)
   return jsonify(output[0])
 
-@pp.route('/predict', methods = ['POST'])
+@app.route('/predict', methods = ['POST'])
 def predict():
   data = [float(x) for x in request.form.values()]
   final_input = scalar.transform(np.array(data).reshape(1,-1))
